@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semesta – Student Study Planner</title>
+<meta name="description" content="Semesta keeps your classes, assignments and deadlines in one calm place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="landing">
+  <header class="top">
+    <a class="logo" href="#home" aria-label="Semesta home"><span class="mark"></span>SEMESTA</a>
+    <form class="top-search" id="topSearch" role="search">
+      <label class="sr" for="topQ">Search assignments</label>
+      <input id="topQ" placeholder="Search your assignments" autocomplete="off">
+      <button aria-label="Search">&#9906;</button>
+    </form>
+    <nav class="top-nav">
+      <a href="#about" id="aboutLink">About us</a>
+      <a href="#settings">Settings</a>
+      <a class="btn dark" href="#dashboard">Open planner</a>
+    </nav>
+  </header>
+  <main class="hero" id="homeMain">
+    <img class="hero-img" alt="Study desk with keyboard, books, a plant and a coffee cup"
+      src="https://static.vecteezy.com/system/resources/thumbnails/053/964/302/small/a-stylized-workspace-featuring-a-computer-keyboard-books-a-plant-and-a-coffee-cup-creating-an-inviting-study-atmosphere-png.png">
+    <div class="hero-copy">
+      <h1>Plan it <span>calmly.</span></h1>
+      <p>Your classes, assignments and deadlines in one study planner.</p>
+      <div class="cta-row">
+        <a class="btn dark" href="#dashboard">Start planning</a>
+        <small>Free. Saved on this device.</small>
+      </div>
+    </div>
+  </main>
+  <main class="about" id="about" hidden>
+    <svg class="orbits" viewBox="0 0 400 400" role="img" aria-label="Orbits around a central point, representing a student's universe">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <ellipse cx="200" cy="200" rx="60" ry="60"/>
+        <ellipse cx="200" cy="200" rx="115" ry="115" opacity=".7"/>
+        <ellipse cx="200" cy="200" rx="170" ry="170" opacity=".45"/>
+        <ellipse cx="200" cy="200" rx="190" ry="80" transform="rotate(-28 200 200)" opacity=".35"/>
+      </g>
+      <circle cx="200" cy="200" r="16" fill="#1b1917"/>
+      <circle cx="260" cy="200" r="7" fill="#9c8b7c"/>
+      <circle cx="117" cy="120" r="9" fill="#c98a6b"/>
+      <circle cx="318" cy="298" r="6" fill="#7a9e9f"/>
+      <circle cx="82" cy="262" r="5" fill="#8f7aa8"/>
+      <circle cx="320" cy="106" r="4" fill="#9c8b7c"/>
+    </svg>
+    <div class="about-copy">
+      <h1>About Semesta</h1>
+      <p>The name Semesta comes from the Indonesian word for universe, representing the many things that make up a student's world. It reflects the idea that every student has their own universe of responsibilities, ambitions, and dreams. Semesta aims to provide a simple, organized space to manage academic tasks, schedules, and goals, helping students find balance, stay focused, and make progress at their own pace.</p>
+      <div class="cta-row">
+        <a class="btn dark" href="#dashboard">Open planner</a>
+        <a class="btn ghost" href="#home">Back to home</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="app" hidden>
+  <aside class="side">
+    <a class="logo" href="#home"><span class="mark"></span>SEMESTA</a>
+    <nav id="nav" aria-label="Main"></nav>
+  </aside>
+  <main class="content">
+    <div id="view" tabindex="-1"></div>
+  </main>
+</div>
+
+<dialog id="modal"><form method="dialog" id="mform" novalidate>
+  <h2 id="mtitle"></h2><div id="mbody"></div><p class="err" id="merr" role="alert"></p>
+  <div class="row end"><button type="button" class="btn ghost" id="mcancel">Cancel</button><button class="btn dark" id="msave">Save</button></div>
+</form></dialog>
+<dialog id="confirm"><form method="dialog">
+  <h2 id="ctitle"></h2><p id="ctext"></p>
+  <div class="row end"><button value="no" class="btn ghost">Cancel</button><button value="yes" class="btn danger" id="cok">Confirm</button></div>
+</form></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
